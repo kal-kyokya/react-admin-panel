@@ -22,8 +22,8 @@ const Topbar = () => {
 			    <SettingsIcon />
 			</div>
 			<img className='profile'
-			     src='../../../../public/profile.JPG'
-			     alt='User profile picture'
+			     src='/profile.JPG'
+			     alt='User profile'
 			/>
 		    </div>
 		</div>
