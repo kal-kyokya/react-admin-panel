@@ -1,8 +1,8 @@
 import './chart.scss';
 import { LineChart, Line,
-	 XAxis, YAxis,
+	 XAxis, Legend,
 	 CartesianGrid, Tooltip,
-	 Legend, ResponsiveContainer
+	 ResponsiveContainer
        } from 'recharts';
 
 const Chart = ({ title, data, grid, dataKey, lineKey1, lineKey2 }) => {

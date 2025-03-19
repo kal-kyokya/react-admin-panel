@@ -5,7 +5,7 @@ import data from '../../dummyData';
 const Insights = () => {
     return (
 	<div className='insights'>
-	    <Chart title='Analytics: Users & Uploads'
+	    <Chart title='Users and Uploaded Videos'
 		   data={ data }
 		   grid
 		   dataKey='month'
