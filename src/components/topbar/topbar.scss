@@ -45,30 +45,12 @@
 		}
 	    }
 
-	    .testPicture1 {
-		width: 53px;
-		height: 53px;
-		border-radius: 50%; /* Circular shape */
-		background-image: url("https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile.JPG");
-		background-size: cover; /* Ensures it fills the area */
-		background-position: center; /* Centers the image */
-		background-repeat: no-repeat;
-		overflow: hidden;
-		border: 1px solid white; /* Optional: Adds a clean border */
-	    }
-
-	    .testPicture3 {
-		width: 4%;
-		height: auto;
-		image-rendering: high-quality;
-		border-radius: 30%;
-	    }
-
 	    .profile {
 		width: 52px;
 		height: 52px;
+		border: 1px solid grey;
 		border-radius: 50%;
-		object-fit: cover;
+		object-fit: fill;
 		cursor: pointer;
 	    }
 	}

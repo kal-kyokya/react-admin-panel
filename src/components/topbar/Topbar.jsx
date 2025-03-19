@@ -21,14 +21,8 @@ const Topbar = () => {
 			<div className='topRightIcons'>
 			    <SettingsIcon />
 			</div>
-			<div className='testPicture1'></div>
-			<div className='testPicture2'></div>
-			<img className='testPicture3'
-			     src='/profile.JPG'
-			     alt='User profile'
-			/>
 			<img className='profile'
-			     src='/profile.JPG'
+			     src='/profile1.JPG'
 			     alt='User profile'
 			/>
 		    </div>
