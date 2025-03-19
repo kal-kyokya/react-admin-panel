@@ -5,20 +5,41 @@
     .widgetLargeTitle {
 	font-size: 26px;
 	font-weight: 600;
+	padding: 19px 0px 0px 19px;
     }
 
     .widgetLargeTable {
+	width: 100%;
+	border-spacing: 13px;
+
+	.widgetLargeTh {
+	    text-align: left;
+	}
 
 	.widgetLargeTbody {
 
-    	    .profile {
-		width: 52px;
-		height: 52px;
-		border: 1px solid grey;
-		border-radius: 50%;
-		object-fit: contain;
-		cursor: pointer;
-		background-color: white;
+    	    .widgetLargeTr {
+
+		.widgetLargeUser {
+		    display: flex;
+		    align-items: center;
+		    font-weight: 600;
+
+		    .profile {
+			width: 52px;
+			height: 52px;
+			border: 1px solid grey;
+			border-radius: 50%;
+			object-fit: contain;
+			cursor: pointer;
+			background-color: white;
+			margin-right: 10px;
+		    }
+		}
+
+		.widgetLargeDate, .widgetLargeAmount {
+		    font-weight: 300;
+		}
 	    }
 
 	    .widgetLargeButton {
