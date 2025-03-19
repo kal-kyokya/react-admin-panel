@@ -1,5 +1,4 @@
 import './home.scss';
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import Widget from '../../components/widget/Widget';
 import WidgetSmall from '../../components/widgetSmall/WidgetSmall';
 import WidgetLarge from '../../components/widgetLarge/WidgetLarge';
