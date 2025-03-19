@@ -16,7 +16,7 @@ const Widget = () => {
 	    <div className='widgetItems'>
 		<span className='widgetTitle'>Revenue</span>
 		<div className='widgetData'>
-		    <span className='widgetDataFigure'>+91,000Ksh | </span>
+		    <span className='widgetDataFigure'>+Ksh91,000 | </span>
 		    <span className='widgetDataPercent'>78%<ArrowUpwardIcon className='widgetIcons' /></span>
 		</div>
 		<span className='widgetText'>Compared to last month.</span>
