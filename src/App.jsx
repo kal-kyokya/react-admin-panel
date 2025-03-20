@@ -4,6 +4,7 @@ import Sidebar from './components/sidebar/Sidebar';
 import Home from './pages/home/Home';
 import Insights from './pages/insights/Insights';
 import UserList from './pages/userList/UserList';
+import User from './pages/user/User';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 		<Routes>
 		    <Route path='/' element={<Home />} />
 		    <Route path='/users' element={<UserList />} />
+		    <Route path='/user/:id' element={<User />} />
 		    <Route path='/insights' element={<Insights />} />
 		</Routes>
 	    </div>
