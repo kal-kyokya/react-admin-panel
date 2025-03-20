@@ -2,6 +2,8 @@ import './userList.scss';
 import { DataGrid } from '@mui/x-data-grid';
 import Paper from '@mui/material/Paper';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import { rows } from '../../dummyData';
+import { Link } from 'react-router-dom';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 91 },
@@ -25,38 +27,18 @@ const columns = [
     valueGetter: (value, row) => `${row.firstName || ''} ${row.lastName || ''}`,
   },
     {
-	field: 'manage', headerName: 'Manage', width: 91, renderCell: () => {
+	field: 'manage', headerName: 'Manage', width: 91, renderCell: (params) => {
 	    return (
 		<div className='manageUser'>
-		    <button className='manageUserButton'>Edit</button>
+		    <Link to={ '/user/' + params.row.id }
+			  className='link'>
+			<button className='manageUserButton'>Edit</button>
+		    </Link>
 		    <DeleteOutlineIcon className='deleteIcon' />
 		</div>
 	    );
 	}
     },
-];
-
-const rows = [
-  { id: 0, username: 'OG-User', lastName: 'Vie', firstName: 'Dems', age: 26, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 1, username: 'User1', lastName: 'Snow', firstName: 'Jon', age: 35, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 2, username: 'User2', lastName: 'Lannister', firstName: 'Cersei', age: 42, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 3, username: 'User3', lastName: 'Lannister', firstName: 'Jaime', age: 45, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 4, username: 'User4', lastName: 'Stark', firstName: 'Arya', age: 16, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 5, username: 'User5', lastName: 'Targaryen', firstName: 'Daenerys', age: null, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 6, username: 'User6', lastName: 'Melisandre', firstName: null, age: 150, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 7, username: 'User7', lastName: 'Clifford', firstName: 'Ferrara', age: 44, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 8, username: 'User8', lastName: 'Frances', firstName: 'Rossini', age: 36, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 9, username: 'User9', lastName: 'Roxie', firstName: 'Harvey', age: 65, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 1, username: 'User1', lastName: 'Snow', firstName: 'Jon', age: 35, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 2, username: 'User2', lastName: 'Lannister', firstName: 'Cersei', age: 42, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 3, username: 'User3', lastName: 'Lannister', firstName: 'Jaime', age: 45, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 4, username: 'User4', lastName: 'Stark', firstName: 'Arya', age: 16, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 5, username: 'User5', lastName: 'Targaryen', firstName: 'Daenerys', age: null, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 6, username: 'User6', lastName: 'Melisandre', firstName: null, age: 150, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 7, username: 'User7', lastName: 'Clifford', firstName: 'Ferrara', age: 44, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 8, username: 'User8', lastName: 'Frances', firstName: 'Rossini', age: 36, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 9, username: 'User9', lastName: 'Roxie', firstName: 'Harvey', age: 65, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
-  { id: 0, username: 'OG-User', lastName: 'Vie', firstName: 'Dems', age: 26, picture: 'https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG' },
 ];
 
 const paginationModel = { page: 0, pageSize: 10 };
@@ -66,10 +48,12 @@ const UserList = () => {
 	<div className='userList'>
 	    <Paper sx={{ height: '100%', width: '100%' }}>
 		<DataGrid
-		    rows={rows} columns={columns}
+		    rows={rows}
+		    columns={columns}
+		    disableRowSelectionOnClick
+		    checkboxSelection		    
 		    initialState={{ pagination: { paginationModel } }}
 		    pageSizeOptions={[10, 15]}
-		    checkboxSelection
 		    sx={{ border: 0 }}
 		/>
 	    </Paper>

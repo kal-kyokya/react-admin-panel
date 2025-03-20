@@ -1,6 +1,6 @@
 import './insights.scss';
 import Chart from '../../components/chart/Chart';
-import data from '../../dummyData';
+import { data } from '../../dummyData';
 
 const Insights = () => {
     return (
