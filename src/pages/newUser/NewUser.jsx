@@ -106,7 +106,7 @@ const NewUser = () => {
 		<div className='newUserRight'>
 		    <div className='newUserUpload'>
 			<img className='newUserImg'
-			     src='https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/refs/heads/main/public/profile1.JPG'
+			     src='https://raw.githubusercontent.com/kal-kyokya/react-admin-panel/757001cfffa81dc9957e7dde0eea61417824d9d7/public/logo.png'
 			     alt='User Profile'
 			/>
 			<label htmlFor='file'>
