@@ -96,7 +96,7 @@ const User = () => {
 			    </div>
 			    <div className='userUpdateItem'>
 				<label>Email</label>
-				<input type='text'
+				<input type='email'
 				       placeholder='kalkyokya4@gmail.com'
 				       className='userUpdateInput'
 				/>

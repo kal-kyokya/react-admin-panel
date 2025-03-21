@@ -7,7 +7,11 @@ const Topbar = () => {
     return (<div className='topbar'>
 		<div className='topBarWrapper'>
 		    <div className='topLeft'>
-			<span className='logo'>Futtech Admin</span>
+			<div className='logo'>
+			    <span className='fut'>Fut</span>
+			    <span className='tech'>tech </span>
+			    | Admin
+			</div>
 		    </div>
 		    <div className='topRight'>
 			<div className='topRightIcons'>
